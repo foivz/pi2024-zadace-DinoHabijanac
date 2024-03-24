@@ -1,5 +1,5 @@
 # Naziv projekta
-Gradski prijevoz
+Varabus
 
 ## Podaci o studentu
 
