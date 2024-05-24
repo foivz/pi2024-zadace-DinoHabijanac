@@ -58,6 +58,7 @@
     <Compile Include="FrmDataChange.Designer.cs">
       <DependentUpon>FrmDataChange.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmShowStation.resx">
