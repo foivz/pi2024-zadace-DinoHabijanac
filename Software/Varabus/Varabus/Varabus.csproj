@@ -62,8 +62,11 @@
       <DependentUpon>FrmDataChange.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Station.cs" />
+    <Compile Include="Models\Timetable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\StationRepository.cs" />
     <EmbeddedResource Include="FrmShowStation.resx">
       <DependentUpon>FrmShowStation.cs</DependentUpon>
     </EmbeddedResource>
