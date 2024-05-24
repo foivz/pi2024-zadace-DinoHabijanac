@@ -25,7 +25,7 @@ namespace Varabus
 
         private void FrmShowStation_Load(object sender, EventArgs e)
         {
-
+            DB.SetConfiguration("PI2324_dhabijana22_DB", "PI2324_dhabijana22_User", "gyb{MI8{")
         }
 
         private void btnDeleteStation_Click(object sender, EventArgs e)
