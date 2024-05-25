@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,12 +17,14 @@ namespace Varabus.Repositories
             int id = int.Parse(reader["Id"].ToString());
             string name = reader["Name"].ToString();
             string description = reader["Description"].ToString();
+            int line = int.Parse(reader["Line"].ToString());
             string schedule = reader["Schedule"].ToString();
             var station = new Station
             {
                 Id = id,
                 Name = name,
                 Description = description,
+                Line = line,
                 Schedule = schedule
             };
             return station;

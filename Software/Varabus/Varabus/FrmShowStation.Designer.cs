@@ -38,9 +38,9 @@
             // 
             // btnDeleteStation
             // 
-            this.btnDeleteStation.Location = new System.Drawing.Point(999, 299);
+            this.btnDeleteStation.Location = new System.Drawing.Point(1300, 328);
             this.btnDeleteStation.Name = "btnDeleteStation";
-            this.btnDeleteStation.Size = new System.Drawing.Size(188, 53);
+            this.btnDeleteStation.Size = new System.Drawing.Size(106, 82);
             this.btnDeleteStation.TabIndex = 0;
             this.btnDeleteStation.Text = "Obriši stanicu";
             this.btnDeleteStation.UseVisualStyleBackColor = true;
@@ -48,9 +48,9 @@
             // 
             // btnAddStation
             // 
-            this.btnAddStation.Location = new System.Drawing.Point(999, 61);
+            this.btnAddStation.Location = new System.Drawing.Point(1300, 219);
             this.btnAddStation.Name = "btnAddStation";
-            this.btnAddStation.Size = new System.Drawing.Size(188, 54);
+            this.btnAddStation.Size = new System.Drawing.Size(106, 82);
             this.btnAddStation.TabIndex = 2;
             this.btnAddStation.Text = "Dodaj stanicu";
             this.btnAddStation.UseVisualStyleBackColor = true;
@@ -58,9 +58,9 @@
             // 
             // btnEditStation
             // 
-            this.btnEditStation.Location = new System.Drawing.Point(999, 186);
+            this.btnEditStation.Location = new System.Drawing.Point(1300, 436);
             this.btnEditStation.Name = "btnEditStation";
-            this.btnEditStation.Size = new System.Drawing.Size(188, 56);
+            this.btnEditStation.Size = new System.Drawing.Size(106, 82);
             this.btnEditStation.TabIndex = 3;
             this.btnEditStation.Text = "Izmjeni stanicu";
             this.btnEditStation.UseVisualStyleBackColor = true;
@@ -70,15 +70,16 @@
             // 
             this.dgvStations.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvStations.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvStations.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvStations.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStations.Location = new System.Drawing.Point(12, 12);
             this.dgvStations.Name = "dgvStations";
-            this.dgvStations.RowHeadersWidth = 51;
+            this.dgvStations.ReadOnly = true;
+            this.dgvStations.RowHeadersWidth = 5;
+            this.dgvStations.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvStations.RowTemplate.Height = 24;
             this.dgvStations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStations.Size = new System.Drawing.Size(968, 426);
+            this.dgvStations.Size = new System.Drawing.Size(1268, 525);
             this.dgvStations.TabIndex = 4;
             this.dgvStations.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStations_CellContentClick);
             // 
@@ -86,12 +87,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1199, 450);
+            this.ClientSize = new System.Drawing.Size(1429, 549);
             this.Controls.Add(this.dgvStations);
             this.Controls.Add(this.btnEditStation);
             this.Controls.Add(this.btnAddStation);
             this.Controls.Add(this.btnDeleteStation);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
