@@ -16,11 +16,13 @@ namespace Varabus.Repositories
             int id = int.Parse(reader["Id"].ToString());
             string name = reader["Name"].ToString();
             string description = reader["Description"].ToString();
+            string schedule = reader["Schedule"].ToString();
             var station = new Station
             {
                 Id = id,
                 Name = name,
-                Description = description
+                Description = description,
+                Schedule = schedule
             };
             return station;
         }
@@ -43,7 +45,7 @@ namespace Varabus.Repositories
         public static List<Station> GetStations()
         {
             List<Station> stations = new List<Station>();
-            string sql = "SELECT * FROM Stations";
+            string sql = "SELECT * FROM dbo.Stations";
             DB.OpenConnection();
             var reader = DB.GetDataReader(sql);
             while (reader.Read())

@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Varabus.Models;
+using Varabus.Repositories;
 
 namespace Varabus
 {
@@ -27,8 +29,14 @@ namespace Varabus
         private void FrmShowStation_Load(object sender, EventArgs e)
         {
             DB.SetConfiguration("PI2324_dhabijana22_DB", "PI2324_dhabijana22_User", "gyb{MI8{");
+            ShowStations();
         }
 
+        private void ShowStations()
+        {
+            List<Station> stations = StationRepository.GetStations();
+            dgvStations.DataSource = stations;
+        }
         private void btnDeleteStation_Click(object sender, EventArgs e)
         {
 
@@ -38,6 +46,11 @@ namespace Varabus
         {
             FrmDataChange frmDataChange = new FrmDataChange();
             frmDataChange.Show();
+        }
+
+        private void dgvStations_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
