@@ -18,6 +18,7 @@ namespace Varabus
         public FrmShowStation()
         {
             InitializeComponent();
+            numSearch.Value = 0;
         }
 
         public void btnAddStation_Click(object sender, EventArgs e)
@@ -40,6 +41,14 @@ namespace Varabus
             List<Station> stations = StationRepository.GetStations();
             dgvStations.DataSource = stations;
         }
+
+        public void ShowStationsLine(int line)
+        {
+            dgvStations.DataSource = null;
+            List<Station> stations = StationRepository.GetStationsLine(line);
+            dgvStations.DataSource = stations;
+        }
+
         public void btnDeleteStation_Click(object sender, EventArgs e)
         {
             if (dgvStations.SelectedRows.Count > 0)
@@ -63,6 +72,20 @@ namespace Varabus
         private void dgvStations_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            int line = int.Parse(numSearch.Text);
+            if (line != 0)
+            {
+                ShowStationsLine(line);
+            }
+        }
+
+        private void btnShowAll_Click(object sender, EventArgs e)
+        {
+            ShowStations();
         }
     }
 }

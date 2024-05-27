@@ -14,7 +14,7 @@ namespace Varabus.Repositories
 {
     internal class StationRepository
     {
-        private static Station CreateObject(SqlDataReader reader)
+        public static Station CreateObject(SqlDataReader reader)
         {
             int id = int.Parse(reader["Id"].ToString());
             string name = reader["Name"].ToString();
@@ -51,6 +51,22 @@ namespace Varabus.Repositories
         {
             List<Station> stations = new List<Station>();
             string sql = "SELECT * FROM dbo.Stations";
+            DB.OpenConnection();
+            var reader = DB.GetDataReader(sql);
+            while (reader.Read())
+            {
+                Station station = CreateObject(reader);
+                stations.Add(station);
+            }
+            reader.Close();
+            DB.CloseConnection();
+            return stations;
+        }
+
+        public static List<Station> GetStationsLine(int line)
+        {
+            List<Station> stations = new List<Station>();
+            string sql = $"SELECT * FROM dbo.Stations WHERE Line = {line}";
             DB.OpenConnection();
             var reader = DB.GetDataReader(sql);
             while (reader.Read())

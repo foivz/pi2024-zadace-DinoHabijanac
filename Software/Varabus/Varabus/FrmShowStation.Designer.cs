@@ -33,13 +33,17 @@
             this.btnAddStation = new System.Windows.Forms.Button();
             this.btnEditStation = new System.Windows.Forms.Button();
             this.dgvStations = new System.Windows.Forms.DataGridView();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.numSearch = new System.Windows.Forms.NumericUpDown();
+            this.btnShowAll = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStations)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSearch)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDeleteStation
             // 
             this.btnDeleteStation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnDeleteStation.Location = new System.Drawing.Point(1300, 434);
+            this.btnDeleteStation.Location = new System.Drawing.Point(1302, 424);
             this.btnDeleteStation.Name = "btnDeleteStation";
             this.btnDeleteStation.Size = new System.Drawing.Size(106, 82);
             this.btnDeleteStation.TabIndex = 0;
@@ -50,7 +54,7 @@
             // btnAddStation
             // 
             this.btnAddStation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnAddStation.Location = new System.Drawing.Point(1300, 219);
+            this.btnAddStation.Location = new System.Drawing.Point(1302, 210);
             this.btnAddStation.Name = "btnAddStation";
             this.btnAddStation.Size = new System.Drawing.Size(106, 82);
             this.btnAddStation.TabIndex = 2;
@@ -61,7 +65,7 @@
             // btnEditStation
             // 
             this.btnEditStation.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnEditStation.Location = new System.Drawing.Point(1300, 328);
+            this.btnEditStation.Location = new System.Drawing.Point(1302, 316);
             this.btnEditStation.Name = "btnEditStation";
             this.btnEditStation.Size = new System.Drawing.Size(106, 82);
             this.btnEditStation.TabIndex = 3;
@@ -86,12 +90,43 @@
             this.dgvStations.TabIndex = 4;
             this.dgvStations.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStations_CellContentClick);
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnSearch.Location = new System.Drawing.Point(1302, 44);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(106, 82);
+            this.btnSearch.TabIndex = 5;
+            this.btnSearch.Text = "Pretraži po liniji";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // numSearch
+            // 
+            this.numSearch.Location = new System.Drawing.Point(1302, 132);
+            this.numSearch.Name = "numSearch";
+            this.numSearch.Size = new System.Drawing.Size(106, 22);
+            this.numSearch.TabIndex = 7;
+            // 
+            // btnShowAll
+            // 
+            this.btnShowAll.Location = new System.Drawing.Point(1302, 160);
+            this.btnShowAll.Name = "btnShowAll";
+            this.btnShowAll.Size = new System.Drawing.Size(106, 23);
+            this.btnShowAll.TabIndex = 8;
+            this.btnShowAll.Text = "Prikaži sve";
+            this.btnShowAll.UseVisualStyleBackColor = true;
+            this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
+            // 
             // FrmShowStation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1429, 549);
+            this.Controls.Add(this.btnShowAll);
+            this.Controls.Add(this.numSearch);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.dgvStations);
             this.Controls.Add(this.btnEditStation);
             this.Controls.Add(this.btnAddStation);
@@ -105,6 +140,7 @@
             this.Text = "Prikaz stanica";
             this.Load += new System.EventHandler(this.FrmShowStation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStations)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSearch)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -115,6 +151,9 @@
         private System.Windows.Forms.Button btnAddStation;
         private System.Windows.Forms.Button btnEditStation;
         private System.Windows.Forms.DataGridView dgvStations;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.NumericUpDown numSearch;
+        private System.Windows.Forms.Button btnShowAll;
     }
 }
 
