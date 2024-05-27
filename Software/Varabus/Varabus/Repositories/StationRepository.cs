@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using DBLayer;
 using Varabus.Models;
 
@@ -32,7 +34,7 @@ namespace Varabus.Repositories
         public static Station GetStation(int id)
         {
             Station station = null;
-            string sql = $"SELECT * FROM Stations WHERE Id = {id}";
+            string sql = $"SELECT * FROM dbo.Stations WHERE Id = {id}";
             DB.OpenConnection();
             var reader = DB.GetDataReader(sql);
             if (reader.HasRows)
@@ -59,6 +61,36 @@ namespace Varabus.Repositories
             reader.Close();
             DB.CloseConnection();
             return stations;
+        }
+
+        public static void DeleteEvaluation(int id)
+        {
+            string sql = $"DELETE FROM dbo.Stations WHERE Id = {id}";
+
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
+        }
+        public static void InsertEvaluation(Station station)
+        {
+
+            string sql = $"INSERT INTO dbo.Stations (Id,Name,Description,Line,Schedule) VALUES ({station.Id},'{station.Name}','{station.Description}',{station.Line},'{station.Schedule}')";
+
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
+            
+        }
+
+        public static void UpdateEvaluation(Station station)
+        {
+
+            string sql = $"UPDATE dbo.Stations SET Name='{station.Name}',Description='{station.Description}',Line={station.Line},Schedule='{station.Schedule}' WHERE Id={station.Id}";
+
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
+
         }
     }
 }

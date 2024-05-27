@@ -13,5 +13,10 @@ namespace Varabus.Models
         public string Description { get; set; }
         public int Line { get; set; }
         public string Schedule { get; set; }
+
+        public bool IsValidLine()
+        {
+            return Line <= 6 && Line >= 0;
+        }
     }
 }

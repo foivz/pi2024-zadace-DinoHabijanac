@@ -22,8 +22,9 @@ namespace Varabus
 
         private void btnAddStation_Click(object sender, EventArgs e)
         {
-            FrmDataChange frmDataChange = new FrmDataChange();
-            frmDataChange.Show();
+            int id = 0;
+            FrmDataChange frmDataChange = new FrmDataChange(id);
+            frmDataChange.ShowDialog();
         }
 
         private void FrmShowStation_Load(object sender, EventArgs e)
@@ -39,13 +40,20 @@ namespace Varabus
         }
         private void btnDeleteStation_Click(object sender, EventArgs e)
         {
-
+            if (dgvStations.SelectedRows.Count > 0)
+            {
+                int id = Convert.ToInt32(dgvStations.SelectedRows[0].Cells["Id"].Value);
+                StationRepository.DeleteEvaluation(id);
+            }
         }
-
         private void btnEditStation_Click(object sender, EventArgs e)
         {
-            FrmDataChange frmDataChange = new FrmDataChange();
-            frmDataChange.Show();
+            if (dgvStations.SelectedRows.Count > 0)
+            {
+                int id = Convert.ToInt32(dgvStations.SelectedRows[0].Cells["Id"].Value);
+                FrmDataChange frmDataChange = new FrmDataChange(id);
+                frmDataChange.ShowDialog();
+            }
         }
 
         private void dgvStations_CellContentClick(object sender, DataGridViewCellEventArgs e)

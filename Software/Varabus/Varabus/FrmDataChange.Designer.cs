@@ -33,19 +33,21 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtSchedule = new System.Windows.Forms.TextBox();
-            this.txtLine = new System.Windows.Forms.TextBox();
-            this.btnEditStation = new System.Windows.Forms.Button();
             this.btnAddStation = new System.Windows.Forms.Button();
             this.lblId = new System.Windows.Forms.Label();
             this.lblStation = new System.Windows.Forms.Label();
             this.lblSchedule = new System.Windows.Forms.Label();
             this.lblLine = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
+            this.numLine = new System.Windows.Forms.NumericUpDown();
+            this.btnCancel = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.numLine)).BeginInit();
             this.SuspendLayout();
             // 
             // txtStation
             // 
             this.txtStation.Location = new System.Drawing.Point(308, 107);
+            this.txtStation.Multiline = true;
             this.txtStation.Name = "txtStation";
             this.txtStation.Size = new System.Drawing.Size(334, 22);
             this.txtStation.TabIndex = 0;
@@ -53,6 +55,7 @@
             // txtDescription
             // 
             this.txtDescription.Location = new System.Drawing.Point(308, 160);
+            this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(334, 22);
             this.txtDescription.TabIndex = 1;
@@ -60,41 +63,29 @@
             // txtId
             // 
             this.txtId.Location = new System.Drawing.Point(308, 61);
+            this.txtId.Multiline = true;
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(334, 22);
             this.txtId.TabIndex = 2;
+            this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
             // 
             // txtSchedule
             // 
             this.txtSchedule.Location = new System.Drawing.Point(308, 260);
+            this.txtSchedule.Multiline = true;
             this.txtSchedule.Name = "txtSchedule";
-            this.txtSchedule.Size = new System.Drawing.Size(334, 22);
+            this.txtSchedule.Size = new System.Drawing.Size(334, 45);
             this.txtSchedule.TabIndex = 3;
-            // 
-            // txtLine
-            // 
-            this.txtLine.Location = new System.Drawing.Point(308, 213);
-            this.txtLine.Name = "txtLine";
-            this.txtLine.Size = new System.Drawing.Size(334, 22);
-            this.txtLine.TabIndex = 4;
-            // 
-            // btnEditStation
-            // 
-            this.btnEditStation.Location = new System.Drawing.Point(462, 326);
-            this.btnEditStation.Name = "btnEditStation";
-            this.btnEditStation.Size = new System.Drawing.Size(109, 66);
-            this.btnEditStation.TabIndex = 5;
-            this.btnEditStation.Text = "Izmjeni postojeću stanicu";
-            this.btnEditStation.UseVisualStyleBackColor = true;
             // 
             // btnAddStation
             // 
             this.btnAddStation.Location = new System.Drawing.Point(308, 326);
             this.btnAddStation.Name = "btnAddStation";
-            this.btnAddStation.Size = new System.Drawing.Size(109, 66);
+            this.btnAddStation.Size = new System.Drawing.Size(162, 66);
             this.btnAddStation.TabIndex = 6;
-            this.btnAddStation.Text = "Unesi novu stanicu";
+            this.btnAddStation.Text = "Unesi izmjene";
             this.btnAddStation.UseVisualStyleBackColor = true;
+            this.btnAddStation.Click += new System.EventHandler(this.btnAddStation_Click);
             // 
             // lblId
             // 
@@ -142,19 +133,37 @@
             this.lblDescription.TabIndex = 11;
             this.lblDescription.Text = "Unesi dodatan opis (opcionalno):";
             // 
+            // numLine
+            // 
+            this.numLine.Location = new System.Drawing.Point(308, 215);
+            this.numLine.Name = "numLine";
+            this.numLine.Size = new System.Drawing.Size(89, 22);
+            this.numLine.TabIndex = 12;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(480, 326);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(162, 66);
+            this.btnCancel.TabIndex = 13;
+            this.btnCancel.Text = "Odustani";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // FrmDataChange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(697, 435);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.numLine);
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.lblLine);
             this.Controls.Add(this.lblSchedule);
             this.Controls.Add(this.lblStation);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.btnAddStation);
-            this.Controls.Add(this.btnEditStation);
-            this.Controls.Add(this.txtLine);
             this.Controls.Add(this.txtSchedule);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.txtDescription);
@@ -166,6 +175,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Promjena podataka";
             this.Load += new System.EventHandler(this.FrmDataChange_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numLine)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,13 +187,13 @@
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtSchedule;
-        private System.Windows.Forms.TextBox txtLine;
-        private System.Windows.Forms.Button btnEditStation;
         private System.Windows.Forms.Button btnAddStation;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label lblStation;
         private System.Windows.Forms.Label lblSchedule;
         private System.Windows.Forms.Label lblLine;
         private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.NumericUpDown numLine;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
