@@ -20,38 +20,42 @@ namespace Varabus
             InitializeComponent();
         }
 
-        private void btnAddStation_Click(object sender, EventArgs e)
+        public void btnAddStation_Click(object sender, EventArgs e)
         {
             int id = 0;
-            FrmDataChange frmDataChange = new FrmDataChange(id);
+            FrmDataChange frmDataChange = new FrmDataChange(id, this);
+            Hide();
             frmDataChange.ShowDialog();
         }
 
-        private void FrmShowStation_Load(object sender, EventArgs e)
+        public void FrmShowStation_Load(object sender, EventArgs e)
         {
             DB.SetConfiguration("PI2324_dhabijana22_DB", "PI2324_dhabijana22_User", "gyb{MI8{");
             ShowStations();
         }
 
-        private void ShowStations()
+        public void ShowStations()
         {
+            dgvStations.DataSource = null;
             List<Station> stations = StationRepository.GetStations();
             dgvStations.DataSource = stations;
         }
-        private void btnDeleteStation_Click(object sender, EventArgs e)
+        public void btnDeleteStation_Click(object sender, EventArgs e)
         {
             if (dgvStations.SelectedRows.Count > 0)
             {
                 int id = Convert.ToInt32(dgvStations.SelectedRows[0].Cells["Id"].Value);
                 StationRepository.DeleteEvaluation(id);
+                ShowStations();
             }
         }
-        private void btnEditStation_Click(object sender, EventArgs e)
+        public void btnEditStation_Click(object sender, EventArgs e)
         {
             if (dgvStations.SelectedRows.Count > 0)
             {
                 int id = Convert.ToInt32(dgvStations.SelectedRows[0].Cells["Id"].Value);
-                FrmDataChange frmDataChange = new FrmDataChange(id);
+                Hide();
+                FrmDataChange frmDataChange = new FrmDataChange(id, this);
                 frmDataChange.ShowDialog();
             }
         }

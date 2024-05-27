@@ -38,32 +38,35 @@
             // 
             // btnDeleteStation
             // 
-            this.btnDeleteStation.Location = new System.Drawing.Point(1300, 328);
+            this.btnDeleteStation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnDeleteStation.Location = new System.Drawing.Point(1300, 434);
             this.btnDeleteStation.Name = "btnDeleteStation";
             this.btnDeleteStation.Size = new System.Drawing.Size(106, 82);
             this.btnDeleteStation.TabIndex = 0;
             this.btnDeleteStation.Text = "Obriši stanicu";
-            this.btnDeleteStation.UseVisualStyleBackColor = true;
+            this.btnDeleteStation.UseVisualStyleBackColor = false;
             this.btnDeleteStation.Click += new System.EventHandler(this.btnDeleteStation_Click);
             // 
             // btnAddStation
             // 
+            this.btnAddStation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnAddStation.Location = new System.Drawing.Point(1300, 219);
             this.btnAddStation.Name = "btnAddStation";
             this.btnAddStation.Size = new System.Drawing.Size(106, 82);
             this.btnAddStation.TabIndex = 2;
             this.btnAddStation.Text = "Dodaj stanicu";
-            this.btnAddStation.UseVisualStyleBackColor = true;
+            this.btnAddStation.UseVisualStyleBackColor = false;
             this.btnAddStation.Click += new System.EventHandler(this.btnAddStation_Click);
             // 
             // btnEditStation
             // 
-            this.btnEditStation.Location = new System.Drawing.Point(1300, 436);
+            this.btnEditStation.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnEditStation.Location = new System.Drawing.Point(1300, 328);
             this.btnEditStation.Name = "btnEditStation";
             this.btnEditStation.Size = new System.Drawing.Size(106, 82);
             this.btnEditStation.TabIndex = 3;
             this.btnEditStation.Text = "Izmjeni stanicu";
-            this.btnEditStation.UseVisualStyleBackColor = true;
+            this.btnEditStation.UseVisualStyleBackColor = false;
             this.btnEditStation.Click += new System.EventHandler(this.btnEditStation_Click);
             // 
             // dgvStations
@@ -93,6 +96,7 @@
             this.Controls.Add(this.btnEditStation);
             this.Controls.Add(this.btnAddStation);
             this.Controls.Add(this.btnDeleteStation);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

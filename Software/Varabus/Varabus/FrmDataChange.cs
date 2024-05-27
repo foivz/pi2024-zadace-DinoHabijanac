@@ -17,9 +17,10 @@ namespace Varabus
 {
     public partial class FrmDataChange : Form
     {
+        private FrmShowStation frm;
         private Station station;
         private bool InsertOrUpdate;
-        public FrmDataChange(int id)
+        public FrmDataChange(int id, FrmShowStation frmShowStation)
         {
             InitializeComponent();
             station = StationRepository.GetStation(id);
@@ -33,6 +34,7 @@ namespace Varabus
                 numLine.Text = station.Line.ToString();
                 txtSchedule.Text = station.Schedule;
             }
+            frm = frmShowStation;
         }
 
         private void FrmDataChange_Load(object sender, EventArgs e)
@@ -45,8 +47,9 @@ namespace Varabus
 
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        public void btnCancel_Click(object sender, EventArgs e)
         {
+            frm.Show();
             Close();
         }
 
@@ -55,7 +58,7 @@ namespace Varabus
 
         }
 
-        private void btnAddStation_Click(object sender, EventArgs e)
+        public void btnAddStation_Click(object sender, EventArgs e)
         {
             int id = int.Parse(txtId.Text);
             string name = txtStation.Text;
@@ -79,6 +82,9 @@ namespace Varabus
             {
                 StationRepository.InsertEvaluation(station);
             }
+            frm.Show();
+            frm.ShowStations();
+            Close();
         }
     }
 }

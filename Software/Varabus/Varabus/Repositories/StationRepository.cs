@@ -90,7 +90,6 @@ namespace Varabus.Repositories
             DB.OpenConnection();
             DB.ExecuteCommand(sql);
             DB.CloseConnection();
-
         }
     }
 }
