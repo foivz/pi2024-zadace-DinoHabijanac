@@ -77,10 +77,14 @@ namespace Varabus
             if (InsertOrUpdate == true)
             {
                 StationRepository.UpdateEvaluation(station);
+                Hide();
+                MessageBox.Show("Uspješan unos stanice!", "Unos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 StationRepository.InsertEvaluation(station);
+                Hide();
+                MessageBox.Show("Uspješna izmjena stanice!", "Izmjena", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             frm.Show();
             frm.ShowStations();

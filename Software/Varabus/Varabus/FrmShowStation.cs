@@ -55,6 +55,9 @@ namespace Varabus
             {
                 int id = Convert.ToInt32(dgvStations.SelectedRows[0].Cells["Id"].Value);
                 StationRepository.DeleteEvaluation(id);
+                Hide();
+                MessageBox.Show("Uspješno obrisana stanica!", "Brisanje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Show();
                 ShowStations();
             }
         }
